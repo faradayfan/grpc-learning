@@ -36,6 +36,21 @@ go run ./go/client/main.go Robot
 
 ```
 
+### Making a Change
+
+After modifying the `.proto` files, you will need to regenerate the go type files. that can be done with this command:
+
+```sh
+
+protoc \
+  --go_out=. \
+  --go_opt=paths=source_relative \
+  --go-grpc_out=. \
+  --go-grpc_opt=paths=source_relative \
+  **/*.proto
+
+```
+
 ## Node
 
 Install dependencies
